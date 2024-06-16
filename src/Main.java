@@ -24,14 +24,16 @@ public class Main {
         do {
             System.out.println("Enter your choice which you want to select: \n");
             System.out.println("\t1. Retrieve current filenames in ascending order \n");
-            System.out.println("\t2. Business-level operation menu \n");
-            System.out.println("\t3. Exit from the application \n");
+            System.out.println("\t2. Count files and directories \n");
+            System.out.println("\t3. Business-level operation menu \n");
+            System.out.println("\t4. Exit from the application \n");
             System.out.print("Your choice: ");
 
             option=sc.nextInt();
             switch (option) {
                 case 1 -> Ops.showAllFiles();
-                case 2 -> {
+                case 2 -> Ops.getStats();
+                case 3 -> {
                     int ch;
                     do {
                         System.out.println("Enter your choice for Business level Operation");
@@ -54,9 +56,9 @@ public class Main {
                         }
                     } while (ch != 4);
                 }
-                case 3 -> System.out.println("Exiting from the application...");
+                case 4 -> System.out.println("Exiting from the application...");
                 default -> System.out.println("Invalid choice");
             }
-        } while (option != 3);
+        } while (option != 4);
     }
 }

@@ -31,6 +31,30 @@ public class BusinessLevelOperations {
         }
     }
 
+    public void getStats() {
+        int fileCount = 0;
+        int directoryCount = 0;
+
+        if (folder.isDirectory()) {
+            File[] contents = folder.listFiles();
+            if (contents != null) {
+                for (File file : contents) {
+                    if (file.isFile()) {
+                        fileCount++;
+                    } else if (file.isDirectory()) {
+                        directoryCount++;
+                    }
+                }
+            }
+        } else {
+            System.out.println("Path is not a directory!");
+        }
+
+        System.out.println("\nNumber of files: " + fileCount);
+        System.out.println("Number of directories: " + directoryCount);
+        System.out.println();
+    }
+
     public void addFile() {
         System.out.println("Enter the file which you want to add:");
         Scanner scan = new Scanner(System.in);
